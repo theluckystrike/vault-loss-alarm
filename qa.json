@@ -1,0 +1,80 @@
+[
+  {
+    "feature": "missing-paths",
+    "caption": "Six missing paths and their last known sizes.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);await p.check();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "delete-events",
+    "caption": "Twenty-five delete events while the vault is open.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const files=[];for(let i=1;i<=25;i++)files.push(await app.vault.create(dir+'/Review '+String(i).padStart(2,'0')+'.md','# Review '+i+'\\nSample report.'));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "now-empty",
+    "caption": "A draft that became empty is listed with its former size.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const f=await app.vault.create(dir+'/Draft.md','A draft for the team report.\\n'.repeat(50));await p.acceptBaseline();await app.vault.modify(f,'');await p.check();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "manual-check",
+    "caption": "A report of three missing paths below the automatic threshold.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files.slice(0,3))await app.vault.delete(f,true);await p.check(true,true);document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "history",
+    "caption": "Two saved manifest times compared with Pro on.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);p.pro.opts.http=async()=>({status:200,json:{data:{viewer:{login:'demo-reader'},user:{sponsorshipForViewerAsSponsor:{isActive:true,isOneTimePayment:false,tier:{name:'$5 a month',monthlyPriceInCents:500}}}}}});app.secretStorage.setSecret('vault-loss-alarm-github-token','gho_'+'0'.repeat(36));await p.pro.refreshNow();const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);await p.check();const dates=await p.historyDates();const report=await p.diffDates(dates[dates.length-2],dates[dates.length-1]);if(report)p.showReport(report,'History: '+new Date(dates[dates.length-2]).toISOString().replace('T',' ').replace('Z',' UTC')+' \u2192 '+new Date(dates[dates.length-1]).toISOString().replace('T',' ').replace('Z',' UTC'));document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "folder-thresholds",
+    "caption": "Folder thresholds with Pro on and the sample GitHub account.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);p.pro.opts.http=async()=>({status:200,json:{data:{viewer:{login:'demo-reader'},user:{sponsorshipForViewerAsSponsor:{isActive:true,isOneTimePayment:false,tier:{name:'$5 a month',monthlyPriceInCents:500}}}}}});app.secretStorage.setSecret('vault-loss-alarm-github-token','gho_'+'0'.repeat(36));await p.pro.refreshNow();p.settings.folderRules='Projects | 2 | 500000\\nArchive | 3 | 1000000';await p.saveSettings();app.setting.open();app.setting.openTabById('vault-loss-alarm');document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "checklist",
+    "caption": "A new restore checklist note from the missing path report.",
+    "note": "Backup review.md",
+    "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);p.pro.opts.http=async()=>({status:200,json:{data:{viewer:{login:'demo-reader'},user:{sponsorshipForViewerAsSponsor:{isActive:true,isOneTimePayment:false,tier:{name:'$5 a month',monthlyPriceInCents:500}}}}}});app.secretStorage.setSecret('vault-loss-alarm-github-token','gho_'+'0'.repeat(36));await p.pro.refreshNow();const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);await p.check();const file=await p.writeChecklist(p.lastReport);p.alarm?.close();if(file)await app.workspace.getLeaf(false).openFile(file);document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+    "wait": 500,
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  },
+  {
+    "feature": "vault-loss-alarm",
+    "caption": "Inspect missing paths, an empty draft and a restore checklist.",
+    "frames": [
+      {
+        "note": "Backup review.md",
+        "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);await p.check();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+        "hold": 1600
+      },
+      {
+        "note": "Backup review.md",
+        "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);const f=await app.vault.create(dir+'/Draft.md','A draft for the team report.\\n'.repeat(50));await p.acceptBaseline();await app.vault.modify(f,'');await p.check();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+        "hold": 1600
+      },
+      {
+        "note": "Backup review.md",
+        "eval": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];app.setting.close();p.alarm?.close();p.pro.signOut();p.settings={fileThreshold:5,byteThreshold:1000000,deleteThreshold:20,folderRules:''};const dir='Vault Loss Alarm/Demo files';const old=app.vault.getAbstractFileByPath(dir);if(old)await app.vault.delete(old,true);await p.acceptBaseline();await app.vault.createFolder(dir);p.pro.opts.http=async()=>({status:200,json:{data:{viewer:{login:'demo-reader'},user:{sponsorshipForViewerAsSponsor:{isActive:true,isOneTimePayment:false,tier:{name:'$5 a month',monthlyPriceInCents:500}}}}}});app.secretStorage.setSecret('vault-loss-alarm-github-token','gho_'+'0'.repeat(36));await p.pro.refreshNow();const names=['Planning.md','Draft.md','Meeting.md','Budget.txt','Invoice.txt','Map.txt'];const files=[];for(let i=0;i<names.length;i++)files.push(await app.vault.create(dir+'/'+names[i],('# '+names[i]+'\\nProject sample '+i+'\\n').repeat(30)));await p.acceptBaseline();for(const f of files)await app.vault.delete(f,true);await p.check();const file=await p.writeChecklist(p.lastReport);p.alarm?.close();if(file)await app.workspace.getLeaf(false).openFile(file);document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()",
+        "hold": 1800
+      }
+    ],
+    "after": "(async()=>{const p=app.plugins.plugins['vault-loss-alarm'];p.alarm?.close();app.setting.close();p.pro.signOut();await p.acceptBaseline();document.querySelectorAll('.notice').forEach(n=>{if(n.textContent!=='Lost 3 files')n.remove();});return 'ok';})()"
+  }
+]

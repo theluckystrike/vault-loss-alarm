@@ -1,0 +1,3350 @@
+{
+ "slug": "vault-loss-alarm",
+ "module": "vault-loss-alarm/src/engine",
+ "function": "compare",
+ "cases": [
+  {
+   "name": "First run has no loss",
+   "function": "compare",
+   "args": [
+    [],
+    [
+     {
+      "path": "First.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [
+     {
+      "path": "First.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "changed": [],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "Six of 100 paths are missing with last sizes",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "Notes/n000.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n001.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n002.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n003.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n004.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n005.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n006.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n007.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n008.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n009.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n010.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n011.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n012.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n013.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n014.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n015.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n016.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n017.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n018.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n019.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n020.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n021.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n022.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n023.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n024.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n025.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n026.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n027.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n028.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n029.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n030.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n031.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n032.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n033.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n034.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n035.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n036.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n037.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n038.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n039.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n040.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n041.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n042.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n043.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n044.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n045.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n046.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n047.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n048.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n049.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n050.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n051.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n052.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n053.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n054.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n055.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n056.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n057.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n058.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n059.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n060.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n061.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n062.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n063.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n064.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n065.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n066.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n067.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n068.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n069.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n070.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n071.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n072.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n073.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n074.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n075.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n076.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n077.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n078.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n079.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n080.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n081.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n082.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n083.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n084.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n085.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n086.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n087.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n088.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n089.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n090.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n091.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n092.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n093.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n094.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n095.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n096.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n097.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n098.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n099.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "Notes/n006.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n007.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n008.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n009.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n010.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n011.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n012.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n013.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n014.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n015.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n016.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n017.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n018.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n019.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n020.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n021.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n022.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n023.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n024.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n025.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n026.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n027.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n028.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n029.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n030.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n031.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n032.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n033.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n034.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n035.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n036.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n037.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n038.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n039.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n040.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n041.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n042.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n043.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n044.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n045.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n046.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n047.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n048.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n049.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n050.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n051.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n052.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n053.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n054.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n055.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n056.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n057.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n058.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n059.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n060.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n061.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n062.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n063.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n064.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n065.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n066.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n067.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n068.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n069.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n070.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n071.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n072.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n073.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n074.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n075.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n076.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n077.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n078.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n079.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n080.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n081.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n082.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n083.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n084.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n085.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n086.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n087.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n088.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n089.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n090.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n091.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n092.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n093.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n094.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n095.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n096.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n097.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n098.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n099.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [
+     {
+      "path": "Notes/n000.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n001.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n002.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n003.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n004.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n005.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 7200
+   }
+  },
+  {
+   "name": "Six losses open the default alarm",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Notes/n000.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n001.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n002.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n003.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n004.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n005.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 7200
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    }
+   ],
+   "expected": true
+  },
+  {
+   "name": "Three small losses stay below the threshold",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Notes/n000.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n001.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n002.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 3600
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    }
+   ],
+   "expected": false
+  },
+  {
+   "name": "Three losses keep exact paths",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "Notes/n000.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n001.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n002.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n003.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n004.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n005.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n006.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n007.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n008.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n009.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n010.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n011.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n012.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n013.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n014.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n015.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n016.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n017.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n018.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n019.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n020.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n021.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n022.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n023.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n024.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n025.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n026.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n027.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n028.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n029.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n030.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n031.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n032.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n033.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n034.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n035.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n036.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n037.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n038.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n039.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n040.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n041.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n042.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n043.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n044.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n045.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n046.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n047.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n048.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n049.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n050.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n051.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n052.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n053.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n054.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n055.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n056.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n057.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n058.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n059.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n060.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n061.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n062.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n063.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n064.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n065.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n066.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n067.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n068.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n069.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n070.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n071.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n072.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n073.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n074.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n075.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n076.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n077.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n078.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n079.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n080.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n081.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n082.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n083.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n084.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n085.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n086.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n087.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n088.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n089.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n090.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n091.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n092.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n093.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n094.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n095.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n096.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n097.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n098.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n099.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "Notes/n003.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n004.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n005.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n006.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n007.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n008.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n009.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n010.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n011.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n012.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n013.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n014.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n015.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n016.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n017.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n018.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n019.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n020.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n021.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n022.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n023.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n024.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n025.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n026.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n027.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n028.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n029.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n030.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n031.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n032.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n033.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n034.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n035.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n036.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n037.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n038.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n039.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n040.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n041.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n042.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n043.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n044.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n045.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n046.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n047.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n048.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n049.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n050.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n051.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n052.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n053.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n054.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n055.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n056.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n057.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n058.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n059.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n060.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n061.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n062.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n063.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n064.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n065.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n066.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n067.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n068.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n069.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n070.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n071.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n072.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n073.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n074.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n075.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n076.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n077.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n078.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n079.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n080.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n081.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n082.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n083.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n084.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n085.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n086.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n087.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n088.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n089.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n090.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n091.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n092.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n093.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n094.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n095.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n096.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n097.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n098.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n099.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [
+     {
+      "path": "Notes/n000.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n001.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Notes/n002.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 3600
+   }
+  },
+  {
+   "name": "In app note rename moves the baseline entry",
+   "function": "movePaths",
+   "args": [
+    [
+     {
+      "path": "Old.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "Old.md",
+    "New.md"
+   ],
+   "expected": [
+    {
+     "path": "New.md",
+     "size": 1200,
+     "mtime": 1
+    }
+   ]
+  },
+  {
+   "name": "Folder rename moves child entries",
+   "function": "movePaths",
+   "args": [
+    [
+     {
+      "path": "Old/a.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Older/b.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "Old",
+    "New"
+   ],
+   "expected": [
+    {
+     "path": "New/a.md",
+     "size": 1200,
+     "mtime": 1
+    },
+    {
+     "path": "Older/b.md",
+     "size": 1200,
+     "mtime": 1
+    }
+   ]
+  },
+  {
+   "name": "25 events in two minutes stay in the window",
+   "function": "rolling",
+   "args": [
+    [
+     {
+      "path": "Deleted/n0.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 0
+     },
+     {
+      "path": "Deleted/n1.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 4000
+     },
+     {
+      "path": "Deleted/n2.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 8000
+     },
+     {
+      "path": "Deleted/n3.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 12000
+     },
+     {
+      "path": "Deleted/n4.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 16000
+     },
+     {
+      "path": "Deleted/n5.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 20000
+     },
+     {
+      "path": "Deleted/n6.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 24000
+     },
+     {
+      "path": "Deleted/n7.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 28000
+     },
+     {
+      "path": "Deleted/n8.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 32000
+     },
+     {
+      "path": "Deleted/n9.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 36000
+     },
+     {
+      "path": "Deleted/n10.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 40000
+     },
+     {
+      "path": "Deleted/n11.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 44000
+     },
+     {
+      "path": "Deleted/n12.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 48000
+     },
+     {
+      "path": "Deleted/n13.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 52000
+     },
+     {
+      "path": "Deleted/n14.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 56000
+     },
+     {
+      "path": "Deleted/n15.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 60000
+     },
+     {
+      "path": "Deleted/n16.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 64000
+     },
+     {
+      "path": "Deleted/n17.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 68000
+     },
+     {
+      "path": "Deleted/n18.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 72000
+     },
+     {
+      "path": "Deleted/n19.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 76000
+     },
+     {
+      "path": "Deleted/n20.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 80000
+     },
+     {
+      "path": "Deleted/n21.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 84000
+     },
+     {
+      "path": "Deleted/n22.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 88000
+     },
+     {
+      "path": "Deleted/n23.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 92000
+     },
+     {
+      "path": "Deleted/n24.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 96000
+     }
+    ],
+    120000
+   ],
+   "expected": [
+    {
+     "path": "Deleted/n0.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 0
+    },
+    {
+     "path": "Deleted/n1.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 4000
+    },
+    {
+     "path": "Deleted/n2.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 8000
+    },
+    {
+     "path": "Deleted/n3.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 12000
+    },
+    {
+     "path": "Deleted/n4.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 16000
+    },
+    {
+     "path": "Deleted/n5.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 20000
+    },
+    {
+     "path": "Deleted/n6.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 24000
+    },
+    {
+     "path": "Deleted/n7.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 28000
+    },
+    {
+     "path": "Deleted/n8.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 32000
+    },
+    {
+     "path": "Deleted/n9.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 36000
+    },
+    {
+     "path": "Deleted/n10.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 40000
+    },
+    {
+     "path": "Deleted/n11.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 44000
+    },
+    {
+     "path": "Deleted/n12.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 48000
+    },
+    {
+     "path": "Deleted/n13.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 52000
+    },
+    {
+     "path": "Deleted/n14.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 56000
+    },
+    {
+     "path": "Deleted/n15.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 60000
+    },
+    {
+     "path": "Deleted/n16.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 64000
+    },
+    {
+     "path": "Deleted/n17.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 68000
+    },
+    {
+     "path": "Deleted/n18.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 72000
+    },
+    {
+     "path": "Deleted/n19.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 76000
+    },
+    {
+     "path": "Deleted/n20.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 80000
+    },
+    {
+     "path": "Deleted/n21.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 84000
+    },
+    {
+     "path": "Deleted/n22.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 88000
+    },
+    {
+     "path": "Deleted/n23.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 92000
+    },
+    {
+     "path": "Deleted/n24.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 96000
+    }
+   ]
+  },
+  {
+   "name": "Delete report lists the 25 event paths",
+   "function": "deleteReport",
+   "args": [
+    [
+     {
+      "path": "Deleted/n0.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 0
+     },
+     {
+      "path": "Deleted/n1.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 4000
+     },
+     {
+      "path": "Deleted/n2.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 8000
+     },
+     {
+      "path": "Deleted/n3.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 12000
+     },
+     {
+      "path": "Deleted/n4.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 16000
+     },
+     {
+      "path": "Deleted/n5.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 20000
+     },
+     {
+      "path": "Deleted/n6.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 24000
+     },
+     {
+      "path": "Deleted/n7.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 28000
+     },
+     {
+      "path": "Deleted/n8.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 32000
+     },
+     {
+      "path": "Deleted/n9.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 36000
+     },
+     {
+      "path": "Deleted/n10.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 40000
+     },
+     {
+      "path": "Deleted/n11.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 44000
+     },
+     {
+      "path": "Deleted/n12.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 48000
+     },
+     {
+      "path": "Deleted/n13.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 52000
+     },
+     {
+      "path": "Deleted/n14.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 56000
+     },
+     {
+      "path": "Deleted/n15.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 60000
+     },
+     {
+      "path": "Deleted/n16.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 64000
+     },
+     {
+      "path": "Deleted/n17.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 68000
+     },
+     {
+      "path": "Deleted/n18.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 72000
+     },
+     {
+      "path": "Deleted/n19.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 76000
+     },
+     {
+      "path": "Deleted/n20.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 80000
+     },
+     {
+      "path": "Deleted/n21.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 84000
+     },
+     {
+      "path": "Deleted/n22.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 88000
+     },
+     {
+      "path": "Deleted/n23.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 92000
+     },
+     {
+      "path": "Deleted/n24.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 96000
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [
+     {
+      "path": "Deleted/n0.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n1.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n2.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n3.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n4.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n5.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n6.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n7.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n8.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n9.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n10.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n11.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n12.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n13.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n14.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n15.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n16.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n17.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n18.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n19.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n20.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n21.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n22.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n23.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "Deleted/n24.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 30000
+   }
+  },
+  {
+   "name": "1200 byte note becomes empty",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "Draft.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "Draft.md",
+      "size": 0,
+      "mtime": 2
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [
+     {
+      "path": "Draft.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "added": [],
+    "changed": [
+     {
+      "path": "Draft.md",
+      "size": 0,
+      "mtime": 2
+     }
+    ],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "One empty note opens the alarm",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [],
+     "empty": [
+      {
+       "path": "Draft.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "added": [],
+     "changed": [],
+     "bytes": 0
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    }
+   ],
+   "expected": true
+  },
+  {
+   "name": "Loss remains on a repeated check",
+   "function": "hasLoss",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Draft.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 1200
+    }
+   ],
+   "expected": true
+  },
+  {
+   "name": "Accepted current baseline has no losses",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "Kept.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "Kept.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "Corrupt JSON returns no manifest",
+   "function": "parseManifest",
+   "args": [
+    "{broken"
+   ],
+   "expected": null
+  },
+  {
+   "name": "Invalid manifest entry returns no manifest",
+   "function": "parseManifest",
+   "args": [
+    "{\"version\": 1, \"savedAt\": 1, \"files\": [{\"path\": \"../outside.md\", \"size\": 1200, \"mtime\": 1}]}"
+   ],
+   "expected": null
+  },
+  {
+   "name": "Duplicate path is refused",
+   "function": "parseManifest",
+   "args": [
+    "{\"version\": 1, \"savedAt\": 1, \"files\": [{\"path\": \"a.md\", \"size\": 1200, \"mtime\": 1}, {\"path\": \"a.md\", \"size\": 1200, \"mtime\": 1}]}"
+   ],
+   "expected": null
+  },
+  {
+   "name": "Valid saved manifest can be read",
+   "function": "parseManifest",
+   "args": [
+    "{\"version\": 1, \"savedAt\": 1, \"files\": [{\"path\": \"a.md\", \"size\": 1200, \"mtime\": 1}]}"
+   ],
+   "expected": {
+    "version": 1,
+    "savedAt": 1,
+    "files": [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   }
+  },
+  {
+   "name": "15000 file manifest stays below two MB",
+   "function": "largeSnapshot",
+   "args": [
+    15000,
+    1700000000000
+   ],
+   "expected": {
+    "count": 15000,
+    "under2MB": true,
+    "first": "Notes/00000.md",
+    "last": "Notes/14999.md"
+   }
+  },
+  {
+   "name": "One large attachment opens the byte alarm",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Photos/photo.jpg",
+       "size": 1000000,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 1000000
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    }
+   ],
+   "expected": true
+  },
+  {
+   "name": "Count equality opens the alarm",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Notes/n000.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n001.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n002.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n003.md",
+       "size": 1200,
+       "mtime": 1
+      },
+      {
+       "path": "Notes/n004.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 6000
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    }
+   ],
+   "expected": true
+  },
+  {
+   "name": "Attachment becoming empty is not a note alarm",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "cover.png",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "cover.png",
+      "size": 0,
+      "mtime": 2
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [],
+    "changed": [
+     {
+      "path": "cover.png",
+      "size": 0,
+      "mtime": 2
+     }
+    ],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "Previously empty note stays quiet",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "Draft.md",
+      "size": 0,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "Draft.md",
+      "size": 0,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "Folder rules match folder boundaries",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Work/a.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 1200
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    },
+    [
+     {
+      "folder": "Work",
+      "files": 1,
+      "bytes": 1000000
+     }
+    ]
+   ],
+   "expected": true
+  },
+  {
+   "name": "Folder rule excludes a similar folder name",
+   "function": "shouldAlarm",
+   "args": [
+    {
+     "missing": [
+      {
+       "path": "Workshop/a.md",
+       "size": 1200,
+       "mtime": 1
+      }
+     ],
+     "empty": [],
+     "added": [],
+     "changed": [],
+     "bytes": 1200
+    },
+    {
+     "files": 5,
+     "bytes": 1000000
+    },
+    [
+     {
+      "folder": "Work",
+      "files": 1,
+      "bytes": 1000000
+     }
+    ]
+   ],
+   "expected": false
+  },
+  {
+   "name": "Expired delete events leave the window",
+   "function": "rolling",
+   "args": [
+    [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 0
+     },
+     {
+      "path": "b.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 1
+     }
+    ],
+    600000
+   ],
+   "expected": [
+    {
+     "path": "b.md",
+     "size": 1200,
+     "mtime": 1,
+     "at": 1
+    }
+   ]
+  },
+  {
+   "name": "Repeated delete events have one displayed path",
+   "function": "deleteReport",
+   "args": [
+    [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 1
+     },
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1,
+      "at": 2
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "empty": [],
+    "added": [],
+    "changed": [],
+    "bytes": 1200
+   }
+  },
+  {
+   "name": "History keeps thirty days and excludes future dates",
+   "function": "historyWithin",
+   "args": [
+    [
+     0,
+     1,
+     2592000001,
+     2592000002
+    ],
+    2592000001
+   ],
+   "expected": [
+    1,
+    2592000001
+   ]
+  },
+  {
+   "name": "Snapshot sorts paths and keeps size and time",
+   "function": "snapshot",
+   "args": [
+    [
+     {
+      "path": "z.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "a.png",
+      "size": 20,
+      "mtime": 2
+     }
+    ],
+    10
+   ],
+   "expected": {
+    "version": 1,
+    "savedAt": 10,
+    "files": [
+     {
+      "path": "a.png",
+      "size": 20,
+      "mtime": 2
+     },
+     {
+      "path": "z.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   }
+  },
+  {
+   "name": "Modified file is listed in date comparison",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "a.md",
+      "size": 2400,
+      "mtime": 4
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [],
+    "changed": [
+     {
+      "path": "a.md",
+      "size": 2400,
+      "mtime": 4
+     }
+    ],
+    "bytes": 0
+   }
+  },
+  {
+   "name": "New file is listed in date comparison",
+   "function": "compare",
+   "args": [
+    [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    [
+     {
+      "path": "a.md",
+      "size": 1200,
+      "mtime": 1
+     },
+     {
+      "path": "b.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ]
+   ],
+   "expected": {
+    "missing": [],
+    "empty": [],
+    "added": [
+     {
+      "path": "b.md",
+      "size": 1200,
+      "mtime": 1
+     }
+    ],
+    "changed": [],
+    "bytes": 0
+   }
+  }
+ ]
+}
