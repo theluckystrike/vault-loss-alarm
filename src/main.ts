@@ -116,6 +116,7 @@ export default class VaultLossAlarmPlugin extends Plugin {
             await this.app.vault.adapter.write(this.path('current.json'), JSON.stringify(current));
             this.baseline = current;
             this.deletes = [];
+            this.deletePending = false;
             this.lastReport = compare(current.files, current.files);
             this.alarm?.close();
             new Notice('Current vault accepted as baseline');

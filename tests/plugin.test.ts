@@ -245,3 +245,24 @@ describe('history size', () => {
         expect(Math.min(...kept)).toBeGreaterThanOrEqual(now - 30 * day);
     });
 });
+describe('audit defects', () => {
+    it('a rename onto a held missing path keeps a readable held baseline', async () => {
+        const { plugin, store } = fixture({ 'A.md': 'Restored copy' });
+        plugin.baseline = { ...snapshot([{ path: 'A.md', size: 1200, mtime: 1 }, { path: 'B.md', size: 13, mtime: 2 }], 1), held: true };
+        await plugin.renameBaseline('A.md', 'B.md');
+        expect(plugin.baseline?.files).toEqual([{ path: 'A.md', size: 13, mtime: 2 }]);
+        await plugin.readBaseline();
+        expect(plugin.baseline?.held).toBe(true);
+        expect(store.get(plugin.path('baseline.json'))).toBe(JSON.stringify(plugin.baseline));
+    });
+    it('accept during a delete refresh does not hold the new baseline again', async () => {
+        vi.useFakeTimers();
+        const { plugin, app } = fixture(Object.fromEntries(Array.from({ length: 21 }, (_, i) => [`Notes/${i}.md`, 'Keep in backup'])));
+        const show = vi.spyOn(plugin, 'showReport').mockImplementation(() => undefined);
+        for (const file of app.vault.getFiles()) plugin.recordDelete(file as never, 100000);
+        await plugin.acceptBaseline();
+        await vi.advanceTimersByTimeAsync(DELETE_REFRESH_MS);
+        expect(show).toHaveBeenCalledOnce();
+        expect(plugin.baseline?.held).toBeUndefined();
+    });
+});

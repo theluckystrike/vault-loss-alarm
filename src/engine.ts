@@ -67,7 +67,11 @@ export function shouldAlarm(report: Report, threshold: Threshold, rules: FolderR
     return report.empty.length > 0 || reachesThreshold(report.missing, threshold) || rules.some((r) => reachesThreshold(report.missing.filter((f) => f.path.startsWith(r.folder + '/')), r));
 }
 export function movePaths(files: Entry[], oldPath: string, newPath: string): Entry[] {
-    return files.map((f) => f.path === oldPath || f.path.startsWith(oldPath + '/') ? { ...f, path: newPath + f.path.slice(oldPath.length) } : { ...f });
+    const inside = (path: string) => path === oldPath || path.startsWith(oldPath + '/');
+    const moved = files.filter((f) => inside(f.path)).map((f) => ({ ...f, path: newPath + f.path.slice(oldPath.length) }));
+    // A moved entry replaces an old entry at the same path, so the manifest keeps unique paths.
+    const taken = new Set(moved.map((f) => f.path));
+    return [...files.filter((f) => !inside(f.path) && !taken.has(f.path)).map((f) => ({ ...f })), ...moved].sort((a, b) => a.path < b.path ? -1 : a.path > b.path ? 1 : 0);
 }
 export function rolling(records: DeleteRecord[], now: number): DeleteRecord[] {
     return records.filter((r) => r.at > now - WINDOW_MS && r.at <= now);
