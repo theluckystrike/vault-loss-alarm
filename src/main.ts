@@ -29,7 +29,7 @@ export default class VaultLossAlarmPlugin extends Plugin {
     async onload(): Promise<void> {
         this.settings = normalizeSettings(await this.loadData() as Partial<VaultLossAlarmSettings> | null);
         await this.readBaseline();
-        const pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS);
+        const pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS, this);
         pro.init();
         this.pro = pro;
         bindPro(pro);

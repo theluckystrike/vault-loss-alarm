@@ -1,6 +1,6 @@
 {
 	"name": "vault-loss-alarm",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"private": true,
 	"description": "Warn you when notes or attachments vanish from your vault and list each missing path with its last known size.",
 	"main": "main.js",
