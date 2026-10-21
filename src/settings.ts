@@ -3,6 +3,7 @@ import { sponsorsSettingItems } from './license/github-obsidian';
 import { PRO_UI, isPro, proLabel } from './pro';
 import type VaultLossAlarmPlugin from './main';
 import type { FolderRule } from './engine';
+import { helloSettingItems } from './hello/settings';
 export interface VaultLossAlarmSettings {
     fileThreshold: number;
     byteThreshold: number;
@@ -31,6 +32,11 @@ export class VaultLossAlarmSettingTab extends PluginSettingTab {
     plugin: VaultLossAlarmPlugin;
     constructor(app: ConstructorParameters<typeof PluginSettingTab>[0], plugin: VaultLossAlarmPlugin) { super(app, plugin); this.plugin = plugin; }
     getSettingDefinitions(): SettingDefinitionItem[] {
+        // The product rows, then the "More from NoteMods" card (packages/hello).
+        return [...this.productSettingDefinitions(), ...helloSettingItems()];
+    }
+
+    productSettingDefinitions(): SettingDefinitionItem[] {
         return [
             ...(['fileThreshold', 'byteThreshold', 'deleteThreshold'] as const).map((key, i) => ({
                 name: ['Missing file threshold', 'Missing byte threshold', 'Delete event threshold'][i]!,

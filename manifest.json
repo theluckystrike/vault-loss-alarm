@@ -1,7 +1,7 @@
 {
 	"id": "vault-loss-alarm",
 	"name": "Vault Loss Alarm",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"minAppVersion": "1.13.4",
 	"description": "Warn you when notes or attachments vanish from your vault and list each missing path with its last known size.",
 	"author": "Michael Lip",

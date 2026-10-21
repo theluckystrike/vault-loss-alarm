@@ -66,6 +66,8 @@ On first use, the settled startup check creates a baseline without an alarm. You
 
 ## Settings
 
+After a minor or major update, this plugin opens one What's new tab in the background. The tab and settings card suggest other NoteMods plugins and Zovo Chat and link to notemods.com for feedback ([privacy](https://notemods.com/privacy/)). The tab sends no data. Turn the tab off in Settings.
+
 Set the missing-file, missing-byte and delete-event thresholds in the plugin settings. Values must be positive whole numbers. The startup delay, save interval and event window are fixed. Folder rules and their saved values remain local when Pro is off; the free check ignores them. The GitHub account controls show the sponsorship status and let you refresh or sign out.
 
 ## FAQ

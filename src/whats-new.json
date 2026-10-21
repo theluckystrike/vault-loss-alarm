@@ -1,0 +1,34 @@
+{
+	"id": "vault-loss-alarm",
+	"name": "Vault Loss Alarm",
+	"version": "1.1.0",
+	"changes": [
+		"New Send feedback command. It opens a page where you can report a problem or suggest an idea.",
+		"Keeps a held baseline readable after a rename onto a missing path.",
+		"Stops a pending delete refresh from holding a newly accepted baseline."
+	],
+	"changes_user": [
+		"New Send feedback command. It opens a page where you can report a problem or suggest an idea.",
+		"Renaming a note to the path of a missing file no longer breaks the saved baseline.",
+		"After you accept the current vault as baseline, a waiting delete check no longer keeps the old one."
+	],
+	"tip": "Run Show loss report to list missing paths below the alarm threshold.",
+	"thanks": "Hi, I am Michael, a solo developer in Poland. Vault Loss Alarm is one of over 100 small plugins that I make. Thank you for using it to keep watch over your vault.",
+	"related": [
+		{
+			"id": "vault-path-portability",
+			"name": "Vault Path Portability",
+			"blurb": "Find vault paths that can fail when moved between devices."
+		},
+		{
+			"id": "sync-churn-watch",
+			"name": "Sync Churn Watch",
+			"blurb": "Compare observed file and settings writes."
+		},
+		{
+			"id": "property-change-ledger",
+			"name": "Property Change Ledger",
+			"blurb": "Record observed changes to selected note properties in a local history file."
+		}
+	]
+}

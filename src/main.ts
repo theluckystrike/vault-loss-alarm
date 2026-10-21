@@ -5,6 +5,8 @@ import { bindPro, isPro, resetPro, proLabel, SPONSORS } from './pro';
 import { DEFAULT_SETTINGS, normalizeSettings, parseFolderRules, VaultLossAlarmSettingTab, type VaultLossAlarmSettings } from './settings';
 import { checklist, compare, deleteReport, hasLoss, historyKeep, historyWithin, movePaths, parseManifest, rolling, shouldAlarm, snapshot, type FolderRule, type DeleteRecord, type Manifest, type Report } from './engine';
 import { HistoryModal, LossModal } from './modal';
+import { setupHello } from './hello/index';
+import WHATS_NEW from './whats-new.json';
 export const SETTLE_MS = 60000;
 export const SAVE_MS = 30 * 60 * 1000;
 export const DELETE_REFRESH_MS = 1000;
@@ -27,6 +29,8 @@ export default class VaultLossAlarmPlugin extends Plugin {
     private serial<T>(job: () => Promise<T>): Promise<T> { const next = this.queue.then(job); this.queue = next.catch(() => undefined); return next; }
     private run(job: Promise<unknown>): void { void job.catch(() => new Notice('Vault loss alarm could not save or read its local files. Check the plugin folder.')); }
     async onload(): Promise<void> {
+        // First: "What's new" reads its state before the settings load (packages/hello). It does not wait.
+        setupHello(this, WHATS_NEW);
         this.settings = normalizeSettings(await this.loadData() as Partial<VaultLossAlarmSettings> | null);
         await this.readBaseline();
         const pro = createGitHubSponsors(this.app, this.manifest.id, SPONSORS, this);
