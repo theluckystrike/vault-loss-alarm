@@ -1,7 +1,7 @@
 import { Notice, Plugin, TFile, normalizePath, type TAbstractFile } from 'obsidian';
 import type { SponsorsManager } from './license/index';
 import { createGitHubSponsors } from './license/github-obsidian';
-import { bindPro, isPro, resetPro, proLabel, SPONSORS } from './pro';
+import { bindPro, isPro, resetPro, proLabel, SPONSORS, proNotice } from './pro';
 import { DEFAULT_SETTINGS, normalizeSettings, parseFolderRules, VaultLossAlarmSettingTab, type VaultLossAlarmSettings } from './settings';
 import { checklist, compare, deleteReport, hasLoss, historyKeep, historyWithin, movePaths, parseManifest, rolling, shouldAlarm, snapshot, type FolderRule, type DeleteRecord, type Manifest, type Report } from './engine';
 import { HistoryModal, LossModal } from './modal';
@@ -223,7 +223,7 @@ export default class VaultLossAlarmPlugin extends Plugin {
     requirePro(): boolean {
         if (isPro())
             return true;
-        new Notice('This is a pro feature. Sponsor on GitHub, then sign in from the plugin settings.');
+        proNotice('This is a pro feature.');
         return false;
     }
     async writeChecklist(report: Report): Promise<TFile | null> {
