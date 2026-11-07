@@ -6,6 +6,7 @@ import { DEFAULT_SETTINGS, normalizeSettings, parseFolderRules } from '../src/se
 import { bindPro, isPro, onProChange, resetPro, SPONSORS } from '../src/pro';
 import { historyKeep, snapshot } from '../src/engine';
 import manifest from '../manifest.json';
+import { GROWTH_LIMIT, growthAsync } from './growth';
 afterEach(() => { resetPro(); vi.useRealTimers(); });
 function fixture(files: Record<string, string> = { 'Notes/a.md': 'A useful note' }) {
     const app = App.createConfigured__({ files });
@@ -89,12 +90,20 @@ describe('stored baseline', () => {
         await Promise.all([plugin.acceptBaseline(), plugin.saveCurrent(), plugin.acceptBaseline()]);
         expect(JSON.parse(store.get(plugin.path('baseline.json'))!)).toEqual(plugin.baseline);
     });
-    it('15000 file save takes under two seconds and two MB', async () => {
-        const { plugin, store } = fixture();
-        vi.spyOn(plugin, 'capture').mockImplementation((now = Date.now()) => snapshot(Array.from({ length: 15000 }, (_, i) => ({ path: `Notes/${i}.md`, size: 1200, mtime: now })), now));
-        const start = performance.now();
+    it('15000 file save grows linearly with the file count and stays under two MB', async () => {
+        const saverOf = (n: number) => {
+            const f = fixture();
+            vi.spyOn(f.plugin, 'capture').mockImplementation((now = Date.now()) => snapshot(Array.from({ length: n }, (_, i) => ({ path: `Notes/${i}.md`, size: 1200, mtime: now })), now));
+            return f;
+        };
+        const { plugin, store } = saverOf(15000);
         await plugin.saveCurrent();
-        expect(performance.now() - start).toBeLessThan(20000);
+        // Growth guard: 15,000 files against 1,500 files, both timed in this test (tests/growth.ts).
+        const g = await growthAsync((n) => {
+            const f = saverOf(n);
+            return () => f.plugin.saveCurrent();
+        }, 15000);
+        expect(g.ratio, g.text).toBeLessThan(GROWTH_LIMIT);
         expect(new TextEncoder().encode(store.get(plugin.path('current.json'))!).length).toBeLessThan(2000000);
     });
 });
