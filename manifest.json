@@ -1,7 +1,7 @@
 {
 	"id": "vault-loss-alarm",
 	"name": "Vault Loss Alarm",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"minAppVersion": "1.13.4",
 	"description": "Show a warning when notes or attachments vanish, such as deleted notes. The alert lists the missing files, each with its last known size. Use it to check vault file loss in sync or backup.",
 	"author": "Michael Lip",
